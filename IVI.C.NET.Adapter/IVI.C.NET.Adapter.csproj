@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E95C0FE2-1BCB-4CA4-9BE4-FDA9D5568881}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IVI.C.NET.Adapter</RootNamespace>
+    <AssemblyName>IVI.C.NET.Adapter</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>_IVI.C.NET.Adapter.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ivi.Counter, Version=1.1.0.0, Culture=neutral, PublicKeyToken=a128c98f1d7717c1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\Ivi.Counter.dll</HintPath>
+    </Reference>
+    <Reference Include="Ivi.DCPwr, Version=1.1.0.0, Culture=neutral, PublicKeyToken=a128c98f1d7717c1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\Ivi.DCPwr.dll</HintPath>
+    </Reference>
+    <Reference Include="Ivi.Digitizer, Version=1.1.0.0, Culture=neutral, PublicKeyToken=a128c98f1d7717c1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\Ivi.Digitizer.dll</HintPath>
+    </Reference>
+    <Reference Include="Ivi.Dmm, Version=1.1.0.0, Culture=neutral, PublicKeyToken=a128c98f1d7717c1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\IVI Foundation\IVI\Microsoft.NET\Framework32\v2.0.50727\IviFoundationSharedComponents 1.1.0\Ivi.Dmm.dll</HintPath>
+    </Reference>
+    <Reference Include="Ivi.Downconverter, Version=1.1.0.0, Culture=neutral, PublicKeyToken=a128c98f1d7717c1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\Ivi.Downconverter.dll</HintPath>
+    </Reference>
+    <Reference Include="Ivi.Driver, Version=1.1.0.0, Culture=neutral, PublicKeyToken=a128c98f1d7717c1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\Ivi.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="Ivi.Fgen, Version=1.1.0.0, Culture=neutral, PublicKeyToken=a128c98f1d7717c1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\Ivi.Fgen.dll</HintPath>
+    </Reference>
+    <Reference Include="Ivi.PwrMeter, Version=1.1.0.0, Culture=neutral, PublicKeyToken=a128c98f1d7717c1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\Ivi.PwrMeter.dll</HintPath>
+    </Reference>
+    <Reference Include="Ivi.RFSigGen, Version=1.1.0.0, Culture=neutral, PublicKeyToken=a128c98f1d7717c1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\Ivi.RFSigGen.dll</HintPath>
+    </Reference>
+    <Reference Include="Ivi.Scope, Version=1.1.0.0, Culture=neutral, PublicKeyToken=a128c98f1d7717c1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\Ivi.Scope.dll</HintPath>
+    </Reference>
+    <Reference Include="Ivi.SpecAn, Version=1.1.0.0, Culture=neutral, PublicKeyToken=a128c98f1d7717c1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\Ivi.SpecAn.dll</HintPath>
+    </Reference>
+    <Reference Include="Ivi.Swtch, Version=1.1.0.0, Culture=neutral, PublicKeyToken=a128c98f1d7717c1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\Ivi.Swtch.dll</HintPath>
+    </Reference>
+    <Reference Include="Ivi.Upconverter, Version=1.1.0.0, Culture=neutral, PublicKeyToken=a128c98f1d7717c1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\Ivi.Upconverter.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IviCInterop\IviDownconverterAttribute.cs" />
+    <Compile Include="IviCInterop\IviUpconverterAttribute.cs" />
+    <Compile Include="IviCInterop\IviRFSigGenAttribute.cs" />
+    <Compile Include="IviCInterop\IviSpecAnAttribute.cs" />
+    <Compile Include="IviDigitizerAdapter.cs" />
+    <Compile Include="DriverAdapterBase.cs" />
+    <Compile Include="DriverIdentity.cs" />
+    <Compile Include="DriverOperation.cs" />
+    <Compile Include="DriverUtility.cs" />
+    <Compile Include="IDriverAdapterBase.cs" />
+    <Compile Include="IviACPwrAdapter.cs" />
+    <Compile Include="IviCInterop\IviDigitizerAttribute.cs" />
+    <Compile Include="IviCInterop\IviACPwrAttribute.cs" />
+    <Compile Include="IviCInterop\IviCounterAttribute.cs" />
+    <Compile Include="IviCInterop\IviPwrMeterAttribute.cs" />
+    <Compile Include="IviCounterAdapter.cs" />
+    <Compile Include="IviDownconverterAdapter.cs" />
+    <Compile Include="IviEnumCMapping.cs" />
+    <Compile Include="IviCInterop\IviFgenAttribute.cs" />
+    <Compile Include="IviCInterop\IviScopeAttribute.cs" />
+    <Compile Include="IviCInterop\IviSwtchAttribute.cs" />
+    <Compile Include="IviCInterop\IviDmmAttribute.cs" />
+    <Compile Include="IviCInterop\IviDCPwrAttribute.cs" />
+    <Compile Include="IviCInterop\IviACPwr.cs" />
+    <Compile Include="IviCInterop\IviCounter.cs" />
+    <Compile Include="IviCInterop\IviDCPwr.cs" />
+    <Compile Include="IviDCPwrAdapter.cs" />
+    <Compile Include="IviCInterop\IviDigitizer.cs" />
+    <Compile Include="IviCInterop\IviDmm.cs" />
+    <Compile Include="IviCInterop\IviDownconverter.cs" />
+    <Compile Include="IviCInterop\IviDriver.cs" />
+    <Compile Include="IviCInterop\IviFgen.cs" />
+    <Compile Include="IviCInterop\IviPwrMeter.cs" />
+    <Compile Include="IviCInterop\IviRFSigGen.cs" />
+    <Compile Include="IviCInterop\IviScope.cs" />
+    <Compile Include="IviCInterop\IviSpecAn.cs" />
+    <Compile Include="IviCInterop\IviSwtch.cs" />
+    <Compile Include="IviCInterop\IviUpconverter.cs" />
+    <Compile Include="IviCInterop\IviDriverAttribute.cs" />
+    <Compile Include="IviDmmAdapter.cs" />
+    <Compile Include="IviFgenAdapter.cs" />
+    <Compile Include="IviPwrMeterAdapter.cs" />
+    <Compile Include="IviRFSigGenAdapter.cs" />
+    <Compile Include="IviScopeAdapter.cs" />
+    <Compile Include="IviSpecAnAdapter.cs" />
+    <Compile Include="IviSwtchAdapter.cs" />
+    <Compile Include="IviUpconverterAdapter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Win32Interop\Win32LibInterop.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="_IVI.C.NET.Adapter.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="IVICONFIGSERVERLib">
+      <Guid>{C6F576F5-7394-458E-B38A-C20C668585E7}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>6</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>"%25ProgramFiles%25\Microsoft SDKs\Windows\v7.0A\bin\gacutil.exe"  /i "$(TargetPath)"</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>"%25ProgramFiles%25\Microsoft SDKs\Windows\v7.0A\bin\gacutil.exe"  /u  "IVI.C.NET.Adapter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=55d3badc1a673a0b"</PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

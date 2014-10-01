@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E84FFD27-A24B-437B-A738-4BA2C994363E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IVI.C.NET.Adapter.Test</RootNamespace>
+    <AssemblyName>IVI.C.NET.Adapter.Test</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ivi.Counter, Version=1.1.0.0, Culture=neutral, PublicKeyToken=a128c98f1d7717c1, processorArchitecture=MSIL" />
+    <Reference Include="Ivi.DCPwr">
+      <HintPath>..\IVI.C.NET.Adapter\Libs\Ivi.DCPwr.dll</HintPath>
+    </Reference>
+    <Reference Include="Ivi.Digitizer, Version=1.1.0.0, Culture=neutral, PublicKeyToken=a128c98f1d7717c1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\IVI.C.NET.Adapter\Libs\Ivi.Digitizer.dll</HintPath>
+    </Reference>
+    <Reference Include="Ivi.Dmm">
+      <HintPath>..\IVI.C.NET.Adapter\Libs\Ivi.Dmm.dll</HintPath>
+    </Reference>
+    <Reference Include="Ivi.Driver">
+      <HintPath>..\IVI.C.NET.Adapter\Libs\Ivi.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="Ivi.Scope, Version=1.1.0.0, Culture=neutral, PublicKeyToken=a128c98f1d7717c1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\IVI.C.NET.Adapter\Libs\Ivi.Scope.dll</HintPath>
+    </Reference>
+    <Reference Include="Ivi.SpecAn, Version=1.1.0.0, Culture=neutral, PublicKeyToken=a128c98f1d7717c1, processorArchitecture=MSIL" />
+    <Reference Include="Ivi.Swtch">
+      <HintPath>..\IVI.C.NET.Adapter\Libs\Ivi.Swtch.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.4.2.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IviCounterAdapterTest.cs" />
+    <Compile Include="IviDigitizerAdapterTest.cs" />
+    <Compile Include="IviDmmAdapterTest.cs" />
+    <Compile Include="IviDCPwrAdapterTest.cs" />
+    <Compile Include="IviDriverAdapterTest.cs" />
+    <Compile Include="IviScopeAdapterTest.cs" />
+    <Compile Include="IviSpecAnAdapterTest.cs" />
+    <Compile Include="IviSwtchAdapterTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
