@@ -256,7 +256,7 @@ namespace IVI.C.NET.Adapter
 
                 if (ptrfun == IntPtr.Zero)
                 {
-                    // If function is not exist in Ivi driver dll, then throw not implement exception. :(
+                    // If function is not exist in Ivi C driver dll, then throw not implemented exception. :(
                     genIL.Emit(OpCodes.Newobj, notImpException);
                     genIL.Emit(OpCodes.Throw);
                 }
@@ -272,7 +272,7 @@ namespace IVI.C.NET.Adapter
 
                     if (IntPtr.Size == 4)
                     {
-                        // 判断处理器类型 
+                        // Check Processer Type 
                         genIL.Emit(OpCodes.Ldc_I4, ptrfun.ToInt32());
                     }
                     else if (IntPtr.Size == 8)
@@ -285,7 +285,7 @@ namespace IVI.C.NET.Adapter
                     }
 
                     genIL.EmitCalli(OpCodes.Calli, CallingConvention.Cdecl, returnType, paramTypes);
-                    genIL.Emit(OpCodes.Ret); // 返回值
+                    genIL.Emit(OpCodes.Ret); // Return
                 }
                 //-------------------------------------------------------------------------------------------
             }
