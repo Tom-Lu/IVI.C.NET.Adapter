@@ -23,6 +23,9 @@ Currently following Ivi C driver been supported:
 Due to no definition about `IviACPwr` in IVI.NET Shared Components yet. So `IviACPwr` driver is
 not supported in current release.
 
+## Getting Started Guide
+[Getting Started Guide](https://github.com/Tom-Lu/IVI.C.NET.Adapter/wiki/Getting-Started-Guide)
+
 ## Development Environment Set up
 1. Install IVI Shared Components
 2. Install IVI.NET Shared Components
