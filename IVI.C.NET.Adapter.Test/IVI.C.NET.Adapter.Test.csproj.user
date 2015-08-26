@@ -1,12 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
-    <StartAction>Program</StartAction>
-    <StartProgram>D:\IVI\IVI_C_NET\IVI.C.NET.Adapter\NUnit\bin\nunit-x86.exe</StartProgram>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
-    <StartAction>Program</StartAction>
-    <StartProgram>E:\IVI\IVI_C_NET\IVI.C.NET.Adapter\NUnit\bin\nunit-x86.exe</StartProgram>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <StartProgram>$(SolutionDir)\NUnit\bin\nunit-x86.exe</StartProgram>
     <StartArguments>IVI.C.NET.Adapter.Test.dll</StartArguments>
+    <StartAction>Program</StartAction>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <StartProgram>$(SolutionDir)\NUnit\bin\nunit-x86.exe</StartProgram>
+    <StartArguments>IVI.C.NET.Adapter.Test.dll</StartArguments>
+    <StartAction>Program</StartAction>
   </PropertyGroup>
 </Project>
