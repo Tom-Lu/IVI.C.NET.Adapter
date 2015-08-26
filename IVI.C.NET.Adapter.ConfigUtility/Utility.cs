@@ -39,7 +39,9 @@ namespace IVI.C.NET.Adapter.ConfigUtility
                                                       "IviDownconverter", "IviFgen", "IviPwrMeter", "IviRFSigGen", "IviScope",
                                                       "IviSpecAn", "IviSwtch", "IviUpconverter" };
 
-        private const string AssemblyQualifiedClassNameTemplate = "IVI.C.NET.Adapter.{0}, IVI.C.NET.Adapter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=55d3badc1a673a0b";
+        private const string AssemblyQualifiedClassNameTemplatePfx = "IVI.C.NET.Adapter.{0}, IVI.C.NET.Adapter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=55d3badc1a673a0b";
+        private const string AssemblyQualifiedClassNameTemplateSnk = "IVI.C.NET.Adapter.{0}, IVI.C.NET.Adapter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d25ace325c488ee2";
+        private string AssemblyQualifiedClassNameTemplateToUse = null;
 
         public Utility()
         {
@@ -48,8 +50,13 @@ namespace IVI.C.NET.Adapter.ConfigUtility
 
         private void Utility_Shown(object sender, EventArgs e)
         {
-            Type IviDmmAdapterType = Type.GetType(string.Format(AssemblyQualifiedClassNameTemplate, "IviDmmAdapter"), false);
-            if (IviDmmAdapterType == null)
+            if (Type.GetType(string.Format(AssemblyQualifiedClassNameTemplateSnk, "IviDmmAdapter"), false) != null)
+                AssemblyQualifiedClassNameTemplateToUse = AssemblyQualifiedClassNameTemplateSnk;
+            else if (Type.GetType(string.Format(AssemblyQualifiedClassNameTemplatePfx, "IviDmmAdapter"), false) != null)
+                AssemblyQualifiedClassNameTemplateToUse = AssemblyQualifiedClassNameTemplatePfx;
+            else AssemblyQualifiedClassNameTemplateToUse = null;
+
+            if (String.IsNullOrEmpty(AssemblyQualifiedClassNameTemplateToUse))
             {
                 MessageBox.Show("IVI.C.NET.Adapter assembly not installed in GAC.\r\nPlease try reinstall IVI.C.NET.Adapter to fix this issue!", "Assembly not in GAC", MessageBoxButtons.OK);
                 Close();
@@ -117,7 +124,7 @@ namespace IVI.C.NET.Adapter.ConfigUtility
                 string SoftwareModuleName = (string)Row.Cells[1].Value;
                 IIviSoftwareModule2 SoftwareModule = (IIviSoftwareModule2)IviHandler.GetSoftwareModule(SoftwareModuleName);
                 string AdapterClass = GetSuitableAdapter(SoftwareModule.PublishedAPIs);
-                if (AdapterClass != null && !AdapterClass.Equals(Row.Cells[2].Value) )
+                if (AdapterClass != null && !AdapterClass.Equals(Row.Cells[2].Value))
                 {
                     Row.Cells[0].Value = true;
                     Row.Cells[3].Value = AdapterClass;
@@ -175,7 +182,7 @@ namespace IVI.C.NET.Adapter.ConfigUtility
                         }
                         else
                         {
-                            SoftwareModule.AssemblyQualifiedClassName = string.Format(AssemblyQualifiedClassNameTemplate, Row.Cells[3].Value);
+                            SoftwareModule.AssemblyQualifiedClassName = string.Format(AssemblyQualifiedClassNameTemplateToUse, Row.Cells[3].Value);
                         }
                     }
                 }

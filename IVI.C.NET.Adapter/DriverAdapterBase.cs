@@ -202,7 +202,7 @@ namespace IVI.C.NET.Adapter
             // Create Constructor
             //-------------------------------------------------------------------------------------------
             ConstructorInfo baseConstructorInfo = typeof(object).GetConstructor(new Type[0]);
-            ConstructorBuilder constructorBuilder = typeBuilder.DefineConstructor( MethodAttributes.Public, CallingConventions.Standard, Type.EmptyTypes);
+            ConstructorBuilder constructorBuilder = typeBuilder.DefineConstructor(MethodAttributes.Public, CallingConventions.Standard, Type.EmptyTypes);
 
             ILGenerator ilGenerator = constructorBuilder.GetILGenerator();
             ilGenerator.Emit(OpCodes.Ldarg_0);                      // Load "this"
@@ -246,7 +246,7 @@ namespace IVI.C.NET.Adapter
 
 
                 // Define the method
-                MethodBuilder methodBuilder = typeBuilder.DefineMethod( methodInfo.Name, MethodAttributes.Public | MethodAttributes.Virtual, returnType, paramTypes);
+                MethodBuilder methodBuilder = typeBuilder.DefineMethod(methodInfo.Name, MethodAttributes.Public | MethodAttributes.Virtual, returnType, paramTypes);
 
                 // Create Method body, call the corresponding driver function
                 //-------------------------------------------------------------------------------------------
@@ -284,13 +284,13 @@ namespace IVI.C.NET.Adapter
                         throw new PlatformNotSupportedException();
                     }
 
-                    genIL.EmitCalli(OpCodes.Calli, CallingConvention.Cdecl, returnType, paramTypes);
+                    genIL.EmitCalli(OpCodes.Calli, CallingConvention.StdCall, returnType, paramTypes);
                     genIL.Emit(OpCodes.Ret); // Return
                 }
                 //-------------------------------------------------------------------------------------------
             }
         }
-        
+
         private void ParseDriverOptions(Dictionary<string, string> DriverOptions, string OptionsSource)
         {
             Regex reg = new Regex("((?<Key>\\w+?)\\s*=((\\s*\\\"(?<Value>.+?)\\s*\\\")|(\\s*(?<Value>\\S+)\\s*)))[,\\s]*");
@@ -299,7 +299,7 @@ namespace IVI.C.NET.Adapter
             foreach (Match match in matchs)
             {
                 string Key = match.Groups["Key"].Value;
-                string Value =  match.Groups["Value"].Value;
+                string Value = match.Groups["Value"].Value;
 
                 if (DriverOptions.ContainsKey(Key))
                 {
@@ -316,7 +316,7 @@ namespace IVI.C.NET.Adapter
 
         private static IIviConfigStore LoadConfigStore()
         {
-            IIviConfigStore iviConfigStore = new IviConfigStoreClass();
+            IIviConfigStore iviConfigStore = new IviConfigStore();
             string text = iviConfigStore.MasterLocation;
             string processDefaultLocation = iviConfigStore.ProcessDefaultLocation;
             if (!string.IsNullOrEmpty(processDefaultLocation))
@@ -333,7 +333,7 @@ namespace IVI.C.NET.Adapter
 
         public void Close()
         {
-            if(ViSession != IntPtr.Zero)
+            if (ViSession != IntPtr.Zero)
             {
                 DriverInterop.close(ViSession);
             }
@@ -359,14 +359,14 @@ namespace IVI.C.NET.Adapter
             }
         }
 
-        private void printCallStack()  
-        {  
-            StackTrace ss = new StackTrace(true);  
+        private void printCallStack()
+        {
+            StackTrace ss = new StackTrace(true);
             String flName = ss.GetFrame(1).GetFileName();
-            int lineNo = ss.GetFrame(1).GetFileLineNumber();  
-            String methodName = ss.GetFrame(1).GetMethod().Name;  
-            Console.WriteLine(flName+"---"+lineNo+"---"+methodName);  
-        }  
+            int lineNo = ss.GetFrame(1).GetFileLineNumber();
+            String methodName = ss.GetFrame(1).GetMethod().Name;
+            Console.WriteLine(flName + "---" + lineNo + "---" + methodName);
+        }
 
         public ViInt32 GetAttributeViInt32(ViAttr attributeId)
         {
