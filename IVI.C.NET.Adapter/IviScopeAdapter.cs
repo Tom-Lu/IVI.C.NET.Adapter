@@ -26,7 +26,7 @@ using IVI.C.NET.Adapter.IviCInterop;
 
 namespace IVI.C.NET.Adapter
 {
-    class IviScopeAdapter : DriverAdapterBase<IviCInterop.IviScope>, IIviScope
+    public class IviScopeAdapter : DriverAdapterBase<IviCInterop.IviScope>, IIviScope
     {
         #region Enum Mapping
 
