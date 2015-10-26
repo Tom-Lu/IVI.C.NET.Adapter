@@ -137,7 +137,8 @@ namespace IVI.C.NET.Adapter
 
         public object GetService(Type serviceType)
         {
-            throw new NotImplementedException();
+            // Only return the driver class instance at this moment
+            return this;
         }
 
         public void Dispose()

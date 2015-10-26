@@ -39,8 +39,8 @@ namespace IVI.C.NET.Adapter.ConfigUtility
                                                       "IviDownconverter", "IviFgen", "IviPwrMeter", "IviRFSigGen", "IviScope",
                                                       "IviSpecAn", "IviSwtch", "IviUpconverter" };
 
-        private const string AssemblyQualifiedClassNameTemplatePfx = "IVI.C.NET.Adapter.{0}, IVI.C.NET.Adapter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=55d3badc1a673a0b";
-        private const string AssemblyQualifiedClassNameTemplateSnk = "IVI.C.NET.Adapter.{0}, IVI.C.NET.Adapter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d25ace325c488ee2";
+        private const string AssemblyQualifiedClassNameTemplatePfx = "IVI.C.NET.Adapter.{0}, IVI.C.NET.Adapter, Version=1.0.0.1, Culture=neutral, PublicKeyToken=55d3badc1a673a0b";
+        private const string AssemblyQualifiedClassNameTemplateSnk = "IVI.C.NET.Adapter.{0}, IVI.C.NET.Adapter, Version=1.0.0.1, Culture=neutral, PublicKeyToken=d25ace325c488ee2";
         private string AssemblyQualifiedClassNameTemplateToUse = null;
 
         public Utility()
