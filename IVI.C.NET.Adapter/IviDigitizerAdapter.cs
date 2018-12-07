@@ -381,6 +381,11 @@ namespace IVI.C.NET.Adapter
             {
                 return Waveforms.GetEnumerator();
             }
+
+            IEnumerator<IWaveform<T>> IEnumerable<IWaveform<T>>.GetEnumerator()
+            {
+                throw new NotImplementedException();
+            }
         }
 
         internal class IviDigitizerAcquisitionStatus : IIviDigitizerAcquisitionStatus
