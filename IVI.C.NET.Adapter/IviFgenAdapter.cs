@@ -22,6 +22,7 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using Ivi.Fgen;
 using IVI.C.NET.Adapter.IviCInterop;
+using Ivi.Driver;
 
 namespace IVI.C.NET.Adapter
 {
@@ -131,6 +132,16 @@ namespace IVI.C.NET.Adapter
             ViSessionStatusCheck(((IviCInterop.IviFgen)Interop).InitiateGeneration(Session));
         }
 
+        public OperationMode GetOperationMode(string channelName)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SetOperationMode(string channelName, OperationMode mode)
+        {
+            throw new NotImplementedException();
+        }
+
         public IIviFgenOutput Output
         {
             get { return FgenOutput; }
@@ -155,6 +166,8 @@ namespace IVI.C.NET.Adapter
         {
             get { return FgenTrigger; }
         }
+
+        public string ReferenceClockSource { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         internal class IviFgenAM : IIviFgenAM
         {
@@ -339,6 +352,16 @@ namespace IVI.C.NET.Adapter
                 return seqHandle;
             }
 
+            public int GetHandle(string channelName)
+            {
+                throw new NotImplementedException();
+            }
+
+            public void SetHandle(string channelName, int handle)
+            {
+                throw new NotImplementedException();
+            }
+
             public int DepthMax
             {
                 get { return Adapter.GetAttributeViInt32(IviFgenAttribute.IVIFGEN_ATTR_SEQUENCE_DEPTH_MAX); }
@@ -424,6 +447,31 @@ namespace IVI.C.NET.Adapter
             public void SetFrequency(string channelName, double frequency)
             {
                 Adapter.SetAttributeViReal64(channelName, IviFgenAttribute.IVIFGEN_ATTR_ARB_FREQUENCY, frequency);
+            }
+
+            public int CreateChannelWaveform(string channelName, short[] waveform)
+            {
+                throw new NotImplementedException();
+            }
+
+            public int CreateChannelWaveform(string channelName, int[] waveform)
+            {
+                throw new NotImplementedException();
+            }
+
+            public int CreateChannelWaveform<T>(string channelName, IWaveform<T> waveform)
+            {
+                throw new NotImplementedException();
+            }
+
+            public int GetHandle(string channelName)
+            {
+                throw new NotImplementedException();
+            }
+
+            public void SetHandle(string channelName, int handle)
+            {
+                throw new NotImplementedException();
             }
 
             public long SizeMax
@@ -1296,6 +1344,11 @@ namespace IVI.C.NET.Adapter
                 Adapter.ViSessionStatusCheck(IviFgenInterop.ConfigureStartTrigger(Adapter.Session, channelName, source, FgenTriggerSlope.getC_Value(slope)));
             }
 
+            public int GetBurstCount(string channelName)
+            {
+                throw new NotImplementedException();
+            }
+
             public Ivi.Driver.PrecisionTimeSpan GetDelay(string channelName)
             {
                 return new Ivi.Driver.PrecisionTimeSpan(new TimeSpan((long)(TimeSpan.TicksPerSecond * Adapter.GetAttributeViReal64(channelName, IviFgenAttribute.IVIFGEN_ATTR_START_TRIGGER_DELAY))));
@@ -1314,6 +1367,16 @@ namespace IVI.C.NET.Adapter
             public double GetThreshold(string channelName)
             {
                 return Adapter.GetAttributeViReal64(channelName, IviFgenAttribute.IVIFGEN_ATTR_START_TRIGGER_THRESHOLD);
+            }
+
+            public void SendSoftwareTrigger()
+            {
+                throw new NotImplementedException();
+            }
+
+            public void SetBurstCount(string channelName, int burstCount)
+            {
+                throw new NotImplementedException();
             }
 
             public void SetDelay(string channelName, Ivi.Driver.PrecisionTimeSpan delay)
