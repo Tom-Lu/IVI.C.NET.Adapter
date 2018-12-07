@@ -35,7 +35,7 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Ivi.Counter, Version=1.1.0.0, Culture=neutral, PublicKeyToken=a128c98f1d7717c1, processorArchitecture=MSIL" />
+    <Reference Include="Ivi.Counter, Version=1.4.0.0, Culture=neutral, PublicKeyToken=a128c98f1d7717c1, processorArchitecture=MSIL" />
     <Reference Include="Ivi.DCPwr">
       <HintPath>..\IVI.C.NET.Adapter\Libs\Ivi.DCPwr.dll</HintPath>
     </Reference>
@@ -53,7 +53,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\IVI.C.NET.Adapter\Libs\Ivi.Scope.dll</HintPath>
     </Reference>
-    <Reference Include="Ivi.SpecAn, Version=1.1.0.0, Culture=neutral, PublicKeyToken=a128c98f1d7717c1, processorArchitecture=MSIL" />
+    <Reference Include="Ivi.SpecAn, Version=1.4.0.0, Culture=neutral, PublicKeyToken=a128c98f1d7717c1, processorArchitecture=MSIL" />
     <Reference Include="Ivi.Swtch">
       <HintPath>..\IVI.C.NET.Adapter\Libs\Ivi.Swtch.dll</HintPath>
     </Reference>
